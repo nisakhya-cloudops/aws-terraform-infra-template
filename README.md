@@ -11,8 +11,8 @@ This repository contains a modular Terraform setup for AWS, including:
 ## Usage
 
 1. Clone the repository:
-```bash
-git clone <repo-url>
+
+git clone git@github.com:nisakhya-cloudops/aws-terraform-infra-template.git
 cd aws-terraform-infra-template
 
 2. Initialize Terraform:

@@ -1,20 +1,35 @@
-# AWS Terraform Infrastructure Template
+# AWS Terraform Infra Template
 
-Reusable Terraform modules for AWS — provision secure, production-grade VPC, EC2, and S3 infrastructure.  
-Automated CI/CD via GitHub Actions for formatting, validation, planning, and deployment.
+This repository contains a modular Terraform setup for AWS, including:
 
-## 🚀 Features
-- Modular IaC design (`vpc`, `ec2`, `s3`)
-- GitHub Actions workflow for automated `terraform plan` and `apply`
-- Remote backend (S3 + DynamoDB)
-- Environment isolation via variable files
-- Enforces Terraform fmt, init, validate before deploy
+- **VPC Module**: Creates VPC, public and private subnets.
+- **EC2 Module**: Deploys EC2 instances.
+- **S3 Module**: Creates S3 buckets.
+- **Environments**: Dev and Prod `.tfvars` files.
+- **GitHub Actions**: CI workflow to run Terraform plan.
 
-## 🛠️ Tech Stack
-Terraform · AWS (VPC, EC2, S3, IAM) · GitHub Actions · YAML
+## Usage
 
-## 📦 How to Use
+1. Clone the repository:
 ```bash
+git clone <repo-url>
+cd aws-terraform-infra-template
+
+2. Initialize Terraform:
+
 terraform init
+
+
+3. Plan deployment for dev:
+
 terraform plan -var-file=environments/dev.tfvars
+
+
+4. Apply deployment for dev:
+
 terraform apply -var-file=environments/dev.tfvars
+
+
+5. Apply deployment for prod:
+
+terraform apply -var-file=environments/prod.tfvars
